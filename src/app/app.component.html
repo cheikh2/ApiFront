@@ -1,0 +1,54 @@
+﻿<!-- nav -->
+<div id="container">
+    <nav *ngIf="currentUser">
+        <ul>
+            <li>
+                <a routerLink="/">Home</a>
+            </li>
+            <li>
+                <a href="#">USERS</a>
+                <!-- First Tier Drop Down -->
+                <ul>
+                    <li><a href="/addUser">Add user</a></li>
+                    <li><a href="/utilisateur">List Users</a></li>
+
+                </ul>
+            </li>
+            <li>
+                <a href="#">ROLES</a>
+                <!-- First Tier Drop Down -->
+                <ul>
+                    <li><a href="/role">Afficher roles</a></li>
+                    <li><a href="#">Add Roles</a></li>
+
+                </ul>
+            </li>
+            <li>
+              <a href="#">COMPTE</a>
+              <!-- First Tier Drop Down -->
+              <ul>
+                  <li><a href="/list-compte">Afficher comptes</a></li>
+                  <li><a href="/add-compte">Ajouter compte</a></li>
+
+              </ul>
+          </li>
+          <li>
+            <a href="#">DEPOT</a>
+            <!-- First Tier Drop Down -->
+            <ul>
+                <li><a href="/add-depot">Faire depot</a></li>
+                <li><a href="/list-depot">Liste depot</a></li>
+            </ul>
+        </li>
+            <li>
+                <a (click)="logout()">Logout</a>
+            </li>
+
+        </ul>
+    </nav>
+</div>
+<br><br><br><br>
+<!-- main app container -->
+<div class="container">
+    <router-outlet></router-outlet>
+</div>

@@ -1,0 +1,19 @@
+<button (click)="onComptes()" >affiche comptes</button>
+<table class="responstable">
+    <thead>
+        <tr>
+            <th>id</th>
+            <th>Numero Compte</th>
+            <th>Solde</th>
+            <th>Date creation</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let compte of comptes">
+            <td scope="row">{{ compte.id }}</td>
+            <td><a style="cursor: pointer" (click)="onGetDepots(compte)">{{ compte.numCompte }}</a></td>
+            <td>{{ compte.solde }}</td>
+            <td>{{ compte.createdAt }}</td>
+        </tr>
+    </tbody>
+</table>

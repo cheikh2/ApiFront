@@ -1,0 +1,20 @@
+<button (click)="onDepots()" >affiche Depots</button>
+<table class="responstable">
+    <thead>
+        <tr>
+            <th>id</th>
+            <th>Montant</th>
+            <th>Date</th>
+            <th>Compte</th>
+            <th>User</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let depot of depots">
+            <td scope="row">{{ depot.id }}</td>
+            <td>{{ depot.montant }}</td>
+            <td>{{ depot.dateDepot }}</td>
+            <td>{{ depot.compte }}</td>
+        </tr>
+    </tbody>
+</table>

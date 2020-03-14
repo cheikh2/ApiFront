@@ -1,0 +1,21 @@
+<button (click)="onRoles()">affiche role</button>
+<div class="table-title">
+
+</div>
+<table class="responstable">
+    <thead>
+        <tr>
+            <th class="text-left">ID</th>
+            <th class="text-left">LIBELLE</th>
+        </tr>
+    </thead>
+    <tbody class="table-hover">
+        <tr *ngFor="let role of roles">
+
+            <td class="text-left ">{{role.id}}</td>
+            <td class="text-left ">{{role.libelle}}</td>
+        </tr>
+
+
+    </tbody>
+</table>

@@ -1,0 +1,57 @@
+<div class="col-md-9 offset-md-3 mt-5">
+    <div class="card">
+        <h4 class="card-header">Komkom</h4>
+        <div class="card-body">
+  
+  <form [formGroup]="addUser">
+      <div class="form-group">
+          <label for="">Username</label>
+          <input 
+          required 
+          minlength="3" 
+          type="text" 
+          formControlName="username" 
+          class="form-control" 
+          placeholder="username"  
+          id="username">
+        </div>
+        <div class="form-group">
+            <label for="">Password</label>
+            <input 
+            required 
+            minlength="3" 
+            type="password" 
+            formControlName="password"
+             class="form-control" 
+             placeholder="password"
+            id="pwd">
+          </div>
+          <div class="form-group">
+              <label for="">Nom</label>
+              <input 
+              required 
+              minlength="3" 
+              type="text" 
+              formControlName="nomComplet"
+               class="form-control" 
+               placeholder="nom"
+              id="name">
+            </div>
+            <div class="form-group">
+              <label for="">Role</label>
+              <select formControlName="role"> 
+                <option  *ngFor="let role of roles" value="/api/roles/{{ role.id }}"> {{role.libelle}}</option>
+              </select> 
+              </div>
+            <div class="form-group">
+              <label for="">Statut</label>
+              <input 
+              required  
+              type="text" 
+              formControlName="isActive"
+               class="form-control" 
+              id="isActive">
+            </div>
+            <button class="btn btn-success" type="submit" (click)="onSaveUser(addUser)">Ajouter</button>
+  </form>
+  </div>

@@ -1,0 +1,30 @@
+<button (click)="onUser()" >affiche users</button>
+<table class="responstable">
+    <thead>
+  
+  <tr> 
+    <th data-th="Driver details"><span>username</span></th>
+    <th>nomComplet</th>
+    <th>Role</th>
+    <th>image</th>
+    <th>blo</th>
+    <th>Statut</th>
+  </tr>
+  
+  <tr *ngFor="let user of users">
+    <td>{{ user.username }}</td>
+    <td>{{ user.nomComplet }}</td>
+    <td>{{user.roles}}</td>
+    <td>{{user.image }}</td>
+    <td><input type="radio"/></td>
+    <td>
+      <div *ngIf="user.isActive; else elseBlock">
+        <button class="btn btn-success" (click)="onActive(user)">Autorisé</button>
+      </div>
+    <ng-template #elseBlock>
+      <button class="btn btn-danger" (click)="onActive(user)">Bloqué</button>
+    </ng-template>
+  </td>
+  </tr>
+  </thead>
+</table>
