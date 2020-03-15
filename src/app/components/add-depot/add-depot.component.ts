@@ -35,15 +35,15 @@ export class AddDepotComponent implements OnInit {
   onSaveDepot(data){
 
     console.log(this.addDepot.value);
-    let depot ={
+    const depot ={
       montant:this.addDepot.value.montant,
       compte:this.addDepot.value.compte
     };
     this.depotService.postDepot(depot).subscribe(
       data=>{
-        console.log(data);
+        alert(JSON.stringify(data));
         localStorage.setItem("token",data.token);
-        this.router.navigate(['utilisateur']);
+        this.router.navigate(['list-depot']);
       },
       error=>{
         console.log(error);

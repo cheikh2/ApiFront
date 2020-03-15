@@ -1,10 +1,12 @@
 export interface Compte {
-    id?:number,
-    token?:string,
-    username:string,
-    password:string,
-    numCompte:string,
-    montant:number,
-    createdAt:Date
+    token?:string;
+    username?:string,
+    password?:string,
+    montant?:number,
+    ninea?:string;
+    rc?:string;
+    role?:string;
+    nomComplet?:string;
+    partenaire?:any;
 }
 

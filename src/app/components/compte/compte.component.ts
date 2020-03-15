@@ -34,7 +34,6 @@ export class CompteComponent implements OnInit {
       rc: new FormControl(''),
       username: new FormControl(''),
       password: new FormControl(''),
-      isActive: new FormControl(''),
       role: new FormControl(''),
       nomComplet: new FormControl(''),
     });
@@ -58,7 +57,6 @@ export class CompteComponent implements OnInit {
               username: this.addCompte.value.username,
               password:this.addCompte.value.password,
               role:this.addCompte.value.role,
-              isactive:this.addCompte.value.isActive,
               nomComplet:this.addCompte.value.nomComplet,
                         
             }

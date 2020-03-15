@@ -1,7 +1,8 @@
 export interface Depot {
     id?:number;
     montant:number;
-    dateDepot:Date;
+    compte?:string;
+    token?:string;
     
 }
 

@@ -20,7 +20,7 @@ export class ListCompteComponent implements OnInit {
         console.log(data["hydra:member"]
         )},
         error=>{
-          alert('Veuillez vous authentifiez');
+         // alert('Veuillez vous authentifiez');
           console.log(error);
         }
     )

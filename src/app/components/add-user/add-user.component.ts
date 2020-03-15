@@ -19,7 +19,6 @@ export class AddUserComponent implements OnInit {
     this.addUser= new FormGroup({
       username: new FormControl(''),
       password: new FormControl(''),
-      isActive: new FormControl(''),
       role: new FormControl(''),
       nomComplet: new FormControl('')
     });
@@ -42,7 +41,6 @@ export class AddUserComponent implements OnInit {
     username:this.addUser.value.username,
     password:this.addUser.value.password,
     role:this.addUser.value.role,
-    isactive:this.addUser.value.isActive,
     nomComplet:this.addUser.value.nomComplet
   };
   this.userService.postUser(user).subscribe(

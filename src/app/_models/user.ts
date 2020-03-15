@@ -1,6 +1,7 @@
 ﻿export class User {
-    id: number;
+    id?: number;
     username: string;
-    password: string;
+    password?: string;
+    nomComplet:string;
     token?: string;
 }
