@@ -13,9 +13,19 @@ export class CompteService {
 
   }
 
+  getNinea(ninea){
+    return this.http.get<Compte[]>(`${environment.apiUrl}/api/comptes?partenaire.ninea=${ninea}`);
+
+  }
+
   postCompte(compte:Compte){
     console.log(environment.apiUrl);
     return this.http.post<Compte>(`${environment.apiUrl}/api/comptes`,compte);
   }
+  /*findByPartenaire(partenaire){
+    const filter = {
+      this.http.get(`${environment.apiUrl}/api/comptes`,compte);
+    }
+  }*/
   
 }

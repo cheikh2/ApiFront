@@ -1,29 +1,42 @@
+<div class="row">
+  <input type="text" placeholder="Search" />
+</div>
 <button (click)="onUser()" >affiche users</button>
 <table class="responstable">
     <thead>
   
   <tr> 
-    <th data-th="Driver details"><span>username</span></th>
-    <th>nomComplet</th>
-    <th>Role</th>
-    <th>image</th>
-    <th>blo</th>
-    <th>Statut</th>
+    <th data-th="Driver details"><span>USERNAME</span></th>
+    <th>NOM</th>
+    <th>ROLE</th>
+    <th>IMAGE</th>
+    <th>STATUT</th>
+    <th>EDITER</th>
+    <th>SUPPRIMER</th>
   </tr>
   
-  <tr *ngFor="let user of users">
+  <tr *ngFor="let user of users |filter:searchText; let i = index">
     <td>{{ user.username }}</td>
     <td>{{ user.nomComplet }}</td>
     <td>{{user.roles}}</td>
-    <td>{{user.image }}</td>
-    <td><input type="radio"/></td>
+    <td><img [src]="AfficheImage(user)" alt="" ></td>
     <td>
       <div *ngIf="user.isActive; else elseBlock">
-        <button class="btn btn-success" (click)="onActive(user)">Autorisé</button>
+        <span class="badge badge-success badge-pill" (click)="onActive(user)">
+          <i class="fa fa-thumbs-up"></i>
+        </span>
       </div>
     <ng-template #elseBlock>
-      <button class="btn btn-danger" (click)="onActive(user)">Bloqué</button>
+      <span class="badge badge-danger badge-pill" (click)="onActive(user)">
+        <i class="fa fa-thumbs-up"></i>
+      </span>
     </ng-template>
+  </td>
+  <td>
+    <button class="btn btn-warning btn-sm"><i class="fa fa-pencil"></i></button>
+  </td>
+  <td>
+    <button (click)="deleteUser(user.id)" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></button>
   </td>
   </tr>
   </thead>

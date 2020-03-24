@@ -45,7 +45,7 @@ export class AddUserComponent implements OnInit {
   };
   this.userService.postUser(user).subscribe(
     data=>{
-      console.log(data);
+      alert("Utilisateur ajouté avec succès");
       localStorage.setItem("token",data.token);
       this.router.navigate(['utilisateur']);
     },

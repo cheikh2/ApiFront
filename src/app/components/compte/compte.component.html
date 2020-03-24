@@ -15,17 +15,17 @@
 
           <div class="form-group">
               <label for="">Registre de commerce</label>
-              <input required minlength="3" type="text" formControlName="rc" class="form-control" placeholder="rc" id="rc">
+              <input required minlength="3" type="text" value={{rc}} formControlName="rc" class="form-control" placeholder="rc" id="rc">
             </div>
 
             <div class="form-group">
               <label for="">Username</label>
-              <input required type="text" formControlName="username" class="form-control" id="username">
+              <input required type="text" value={{username}} formControlName="username" class="form-control" id="username">
             </div>
 
             <div class="form-group">
                 <label for="">Password</label>
-                <input required type="password" formControlName="password" class="form-control" id="password">
+                <input required type="password" value={{password}} formControlName="password" class="form-control" id="password">
             </div>
 
             <div class="form-group">
@@ -35,14 +35,9 @@
                 </select> 
             </div>
 
-            <div class="form-group">
-                <label for="">Statut</label>
-                <input required type="text" formControlName="isActive" class="form-control" id="isActive">
-              </div>
-
               <div class="form-group">
                 <label for="">Nom complet</label>
-                <input required type="text" formControlName="nomComplet" class="form-control" id="nomComplet">
+                <input required type="text" value={{nomComplet}} formControlName="nomComplet" class="form-control" id="nomComplet">
               </div>
 
             <button class="btn btn-success" type="submit" (click)="onSaveCompte(addUser)">Ajouter</button>

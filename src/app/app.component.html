@@ -6,7 +6,7 @@
                 <a routerLink="/">Home</a>
             </li>
             <li>
-                <a href="#">USERS</a>
+                <a href="#">User</a>
                 <!-- First Tier Drop Down -->
                 <ul>
                     <li><a href="/addUser">Add user</a></li>
@@ -15,7 +15,7 @@
                 </ul>
             </li>
             <li>
-                <a href="#">ROLES</a>
+                <a href="#">Roles</a>
                 <!-- First Tier Drop Down -->
                 <ul>
                     <li><a href="/role">Afficher roles</a></li>
@@ -24,7 +24,7 @@
                 </ul>
             </li>
             <li>
-              <a href="#">COMPTE</a>
+              <a href="#">Compte</a>
               <!-- First Tier Drop Down -->
               <ul>
                   <li><a href="/list-compte">Afficher comptes</a></li>
@@ -33,7 +33,7 @@
               </ul>
           </li>
           <li>
-            <a href="#">DEPOT</a>
+            <a href="#">Depot</a>
             <!-- First Tier Drop Down -->
             <ul>
                 <li><a href="/add-depot">Faire depot</a></li>
@@ -41,13 +41,14 @@
             </ul>
         </li>
             <li>
-                <a (click)="logout()">Logout</a>
+                <a (click)="logout()">Deconnexion</a>
             </li>
 
         </ul>
     </nav>
 </div>
 <br><br><br><br>
+
 <!-- main app container -->
 <div class="container">
     <router-outlet></router-outlet>

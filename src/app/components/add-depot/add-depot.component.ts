@@ -41,7 +41,7 @@ export class AddDepotComponent implements OnInit {
     };
     this.depotService.postDepot(depot).subscribe(
       data=>{
-        alert(JSON.stringify(data));
+        alert("Depot effectué avec succès");
         localStorage.setItem("token",data.token);
         this.router.navigate(['list-depot']);
       },

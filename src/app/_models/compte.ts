@@ -8,5 +8,6 @@ export interface Compte {
     role?:string;
     nomComplet?:string;
     partenaire?:any;
+    depots?:any;
 }
 
