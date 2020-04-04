@@ -28,18 +28,11 @@
                 <input required type="password" value={{password}} formControlName="password" class="form-control" id="password">
             </div>
 
-            <div class="form-group">
-                <label for="">Role </label>
-                <select formControlName="role"> 
-                  <option  *ngFor="let role of roles" value="/api/roles/{{ role.id }}"> {{role.libelle}}</option>
-                </select> 
-            </div>
-
               <div class="form-group">
                 <label for="">Nom complet</label>
                 <input required type="text" value={{nomComplet}} formControlName="nomComplet" class="form-control" id="nomComplet">
               </div>
 
-            <button class="btn btn-success" type="submit" (click)="onSaveCompte(addUser)">Ajouter</button>
+            <button class="btn btn-success" type="submit" (click)="onSaveCompte(addCompte)">Ajouter</button>
   </form>
   </div>

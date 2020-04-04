@@ -22,21 +22,13 @@ export class CompteComponent implements OnInit {
   role:any;
   password:any;
   iripart:any;
+  iriRole:`/api/roles/6`;
     
   constructor(private roleService:RoleService, private compteService:CompteService, private router:Router) { }
     
   ngOnInit() {
     
-    this.roleService.getRoles().subscribe(
-      data=>{
-        this.roles=data["hydra:member"]
-        console.log(data["hydra:member"]
-        )},
-        error=>{
-          alert('Veuillez vous authentifiez');
-          console.log(error);
-        }
-    ),
+    this.iriRole;
 
     this.cherche=0;
 
@@ -46,15 +38,14 @@ export class CompteComponent implements OnInit {
             rc: new FormControl(''),
             username: new FormControl(''),
             password: new FormControl(''),
-            role:new FormControl(''),
             nomComplet: new FormControl(''),
          
     });
-    this.exicte();
+    this.existant();
 
   }
 //###############
-  exicte()
+  existant()
     {
       this.addCompte.get('ninea').valueChanges.subscribe(val=>
         {
@@ -62,8 +53,6 @@ export class CompteComponent implements OnInit {
         this.compteService.getNinea(val).subscribe(
         data=>
         {
-         // console.log(this.rc=data["hydra:member"][0].partenaire.rc);
-          //console.log(data["hydra:member"][0].partenaire);
           console.log(this.compte=data["hydra:member"]);
           if(data["hydra:member"][0])
           {
@@ -76,21 +65,19 @@ export class CompteComponent implements OnInit {
             this.iripart=(data["hydra:member"][0].partenaire['@id']);
             
   
-          // console.log(this.rc=data["hydra:member"][0].rc);
-          //console.log(this.nomComplet=data["hydra:member"][0].partenaire.users[0].nomComplet);
-
             this.rc = data["hydra:member"][0].partenaire.rc;
             this.nomComplet = data["hydra:member"][0].partenaire.users[0].nomComplet;
             this.username = data["hydra:member"][0].partenaire.users[0].username;
-            this.role = data["hydra:member"][0].partenaire.users[0].role;
             this.password = data["hydra:member"][0].partenaire.users[0].password;
   
            this.cherche=1;
   
           }else{
 
-            this.addCompte.get('partenaire.users').enable();
-            this.addCompte.get('partenaire').enable();
+            this.addCompte.get('rc').enable();
+            this.addCompte.get('username').enable();
+            this.addCompte.get('password').enable();
+            this.addCompte.get('nomComplet').enable();
           }
   
   
@@ -113,8 +100,9 @@ export class CompteComponent implements OnInit {
                }
               ],
     r.partenaire = this.iripart;
-console.log(r);
-  if(!this.cherche){
+    console.log(r);
+
+    if(!this.cherche){
     let re= {} as Compte;
 
       re.depots=[
@@ -137,32 +125,26 @@ console.log(r);
           console.log(this.addCompte.value);
           this.compteService.postCompte(re).subscribe(
             data=>{
-              console.log(data);
+              alert(JSON.stringify(data));
+          localStorage.setItem("token",data.token);
+          this.router.navigate(['list-compte']);
             },
             error=>{
               console.log(error);
             }
           )
       
-
-    /*  this.compteService.postCompte(compte).subscribe(
-        data=>{
-          alert(JSON.stringify(data));
-          localStorage.setItem("token",data.token);
-          this.router.navigate(['list-compte']);
-        },
-        error=>{
-          console.log(error);
-        }
-      )*/
     }else{
 
       this.compteService.postCompte(r).subscribe(
         data=>{
-          console.log(data)
+          alert(JSON.stringify(data));
+          localStorage.setItem("token",data.token);
+          this.router.navigate(['list-compte']);
         });
     
      }
       }
+
      }
     

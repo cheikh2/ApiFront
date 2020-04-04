@@ -66,6 +66,8 @@ export class UtilisateurComponent implements OnInit {
       }
 
       deleteUser(id){
+        let user=confirm("Etes vous sûre ?");
+        if(!user) return;
         this.userService.delete(id).subscribe(() => {
             this.users=this.users.filter(user=>user.id != id)
         })

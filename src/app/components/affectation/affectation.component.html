@@ -1,0 +1,34 @@
+<div class="col-md-9 offset-md-3 mt-5">
+    <div class="card">
+        <h4 class="card-header">Komkom</h4>
+        <div class="card-body">
+  
+  <form [formGroup]="addAffectation">
+    <div class="form-group">
+        <label for="">Date Debut</label>
+        <input type="date" formControlName="dateAffectation" class="form-control" placeholder="date debut" id="dateAffectation">
+      </div>
+
+      <div class="form-group">
+        <label for="">Date Fin</label>
+        <input type="date" formControlName="dateExpiration" class="form-control" placeholder="date fin" id="dateExpiration">
+      </div>
+
+      <div class="form-group">
+        <label for="user">Beneficiaire</label>
+        <select class="form-control" formControlName="user"> 
+          <option  *ngFor="let user of users" value="{{ user.id }}"> {{user.username}}</option>
+        </select> 
+        </div>
+
+        <div class="form-group">
+            <label for="compte">Compte</label>
+            <select class="form-control" formControlName="compte"> 
+              <option  *ngFor="let compte of comptes" value="{{ compte.id }}"> {{compte.numCompte}}</option>
+            </select> 
+            </div>
+
+
+            <button class="btn btn-success" type="submit" (click)="onSaveAffect()">Affecter</button>
+  </form>
+  </div>

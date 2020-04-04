@@ -1,4 +1,4 @@
-﻿import { LoginGuard } from './guard/login.guard';
+﻿import { AuthGuard } from './_helpers/auth.guard';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -20,7 +20,17 @@ import { CompteComponent } from './components/compte/compte.component';
 import { ListDepotComponent } from './components/list-depot/list-depot.component';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { NgxPaginationModule } from 'ngx-pagination';
-import { SearchComponent } from './components/search/search.component'
+import { SearchComponent } from './components/search/search.component';
+import { AffectationComponent } from './components/affectation/affectation.component';
+import { ListAffectationComponent } from './components/list-affectation/list-affectation.component';
+import { TransactionComponent } from './components/transaction/transaction.component';
+import { ListTransactionComponent } from './components/list-transaction/list-transaction.component'
+
+
+
+
+
+
 
 @NgModule({
     imports: [
@@ -35,22 +45,25 @@ import { SearchComponent } from './components/search/search.component'
         AppComponent,
         HomeComponent,
         LoginComponent,
-        UtilisateurComponent
-,
+        UtilisateurComponent,
         AddDepotComponent ,
         ListCompteComponent ,
         AddUserComponent ,
         RoleComponent ,
         CompteComponent,
         ListDepotComponent,
-        SearchComponent  
-    
+        SearchComponent ,
+        AffectationComponent ,
+        ListAffectationComponent,
+        TransactionComponent
+,
+        ListTransactionComponent
     ],
         
     providers: [
         { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
         { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
-        LoginGuard
+        AuthGuard
 
 
     ],

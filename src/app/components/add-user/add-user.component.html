@@ -38,8 +38,8 @@
               id="name">
             </div>
             <div class="form-group">
-              <label for="">Role</label>
-              <select formControlName="role"> 
+              <label for="exampleFormControlSelect1">Role</label>
+              <select class="form-control" formControlName="role"> 
                 <option  *ngFor="let role of roles" value="/api/roles/{{ role.id }}"> {{role.libelle}}</option>
               </select> 
               </div>

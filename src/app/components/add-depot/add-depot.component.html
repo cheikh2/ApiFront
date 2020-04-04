@@ -10,8 +10,8 @@
       </div>
       <div class="form-group">
           <label for="">Compte</label>
-          <select formControlName="compte"> 
-            <option  *ngFor="let compte of comptes" value="/api/comptes/{{ compte.id }}"> {{compte.numCompte}}</option>
+          <select class="form-control" formControlName="compte"> 
+            <option  *ngFor="let compte of comptes" value="{{ compte.id }}"> {{compte.numCompte}}</option>
           </select> 
           </div>
         

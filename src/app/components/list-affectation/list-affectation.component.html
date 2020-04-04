@@ -1,0 +1,22 @@
+<button (click)="onAffectation()" >affiche affectation</button>
+<table class="responstable">
+    <thead>
+        <tr>
+            <th>id</th>
+            <th>Date DEBUT</th>
+            <th>DATE FIN</th>
+            <th>BENEFICIAIRE</th>
+            <th>COMPTE</th>
+            <th>UTILISATEUR</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let affectation of affectations">
+            <td scope="row">{{ affectation.id }}</td>
+            <td>{{ affectation.dateAffectation }}</td>
+            <td>{{ affectation.dateExpiration }}</td>
+            <td>{{ affectation.user.nomComplet }}</td>
+            <td>{{ affectation.compte.numCompte }}</td>
+            <td>{{ affectation.affecteur }}</td>
+    </tbody>
+</table>

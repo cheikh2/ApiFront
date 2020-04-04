@@ -37,7 +37,7 @@ export class AddDepotComponent implements OnInit {
     console.log(this.addDepot.value);
     const depot ={
       montant:this.addDepot.value.montant,
-      compte:this.addDepot.value.compte
+      compte:`api/comptes/${this.addDepot.value.compte}`
     };
     this.depotService.postDepot(depot).subscribe(
       data=>{

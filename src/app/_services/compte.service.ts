@@ -22,10 +22,5 @@ export class CompteService {
     console.log(environment.apiUrl);
     return this.http.post<Compte>(`${environment.apiUrl}/api/comptes`,compte);
   }
-  /*findByPartenaire(partenaire){
-    const filter = {
-      this.http.get(`${environment.apiUrl}/api/comptes`,compte);
-    }
-  }*/
   
 }

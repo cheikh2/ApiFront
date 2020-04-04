@@ -1,4 +1,7 @@
-﻿import { ListDepotComponent } from './components/list-depot/list-depot.component';
+﻿import { TransactionComponent } from './components/transaction/transaction.component';
+import { AffectationComponent } from './components/affectation/affectation.component';
+import { ListAffectationComponent } from './components/list-affectation/list-affectation.component';
+import { ListDepotComponent } from './components/list-depot/list-depot.component';
 import { AddDepotComponent } from './components/add-depot/add-depot.component';
 import { Routes, RouterModule } from '@angular/router';
 
@@ -10,6 +13,7 @@ import { AddUserComponent } from './components/add-user/add-user.component';
 import { RoleComponent } from './components/role/role.component';
 import { ListCompteComponent } from './components/list-compte/list-compte.component';
 import { CompteComponent } from './components/compte/compte.component';
+import { ListTransactionComponent } from './components/list-transaction/list-transaction.component';
 
 const routes: Routes = [
     { path: '', component: HomeComponent, canActivate: [AuthGuard] },
@@ -20,10 +24,15 @@ const routes: Routes = [
     {path:'add-compte',component:CompteComponent},
     {path:'add-depot',component:AddDepotComponent},
     {path:'list-depot',component:ListDepotComponent},
+    {path:'list-affectation',component:ListAffectationComponent},
+    {path:'add-affectation',component:AffectationComponent},
+    {path:'add-transaction',component:TransactionComponent},
+    {path:'list-transaction',component:ListTransactionComponent},
     {path:'role',component:RoleComponent},
 
     // otherwise redirect to home
     { path: '**', redirectTo: '' }
+    
 ];
 
 export const appRoutingModule = RouterModule.forRoot(routes);

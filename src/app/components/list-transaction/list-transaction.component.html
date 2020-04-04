@@ -1,0 +1,54 @@
+<button (click)="onTrans()" >affiche Transactions</button>
+<table class="responstable">
+    <thead>
+        <tr>
+            <th>id</th>
+            <th>Code</th>
+            <th>Envoyeur</th>
+            <th>CNIEnvoyeur</th>
+            <th>TelEnvoyeur</th>
+            <th>Montant</th>
+            <th>CNIEnvoye</th>
+            <th>Beneficiaire</th>
+            <th>TelEnvoye</th>
+            <th>Frais</th>
+            <th>Part_Etat</th>
+            <th>Part_Susteme</th>
+            <th>Part_Envoyeur</th>
+            <th>Part_Retreur</th>
+            <th>User_Transfert</th>
+            <th>User_Retrait</th>
+            <th>Compte_Transfert</th>
+            <th>Compte_Retrait</th>
+            <th>Montant_Perçu</th>
+            <th>Etat</th>
+            <th>Date_Transfert</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let transaction of transactions">
+            <td scope="row">{{ transaction.id }}</td>
+            <td>{{ transaction.code }}</td>
+            <td>{{ transaction.nomCEnvoyeur }}</td>
+            <td>{{ transaction.CNIEnvoyeur }}</td>
+            <td>{{ transaction.telEnvoyeur }}</td>
+            <td>{{ transaction.montant }}</td>
+            <td>{{ transaction.CNIEnvoye }}</td>
+            <td>{{ transaction.nomCEnvoye }}</td>
+            <td>{{ transaction.telEnvoye }}</td>
+            <td>{{ transaction.frais }}</td>
+            <td>{{ transaction.partEtat }}</td>
+            <td>{{ transaction.partSysteme }}</td>
+            <td>{{ transaction.partEnvoyeur }}</td>
+            <td>{{ transaction.partRetreur }}</td>
+            <td>{{ transaction.transfert }}</td>
+            <td>{{ transaction.retrait }}</td>
+            <td>{{ transaction.compte }}</td>
+            <td>{{ transaction.compteRetrai }}</td>
+            <td>{{ transaction.montantPercu }}</td>
+            <td>{{ transaction.statut }}</td>
+            <td>{{ transaction.dateTrans }}</td>
+
+        </tr>
+    </tbody>
+</table>

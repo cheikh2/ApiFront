@@ -18,7 +18,7 @@
   <tr *ngFor="let user of users |filter:searchText; let i = index">
     <td>{{ user.username }}</td>
     <td>{{ user.nomComplet }}</td>
-    <td>{{user.roles}}</td>
+    <td>{{user.role.libelle}}</td>
     <td><img [src]="AfficheImage(user)" alt="" ></td>
     <td>
       <div *ngIf="user.isActive; else elseBlock">
