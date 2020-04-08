@@ -28,12 +28,31 @@ export class AuthenticationService {
                 localStorage.setItem('currentUser', JSON.stringify(user));
                 this.currentUserSubject.next(user);
                 return user;
+                
             }));
     }
+
+    /**
+     * login(username: string, password: string) {
+        return this.http.post<any>(`${environment.apiUrl}/login_check`, { username, password })
+            .pipe(map(user => {
+                console.log(user);
+                // store user details and jwt token in local storage to keep user logged in between page refreshes
+                localStorage.setItem('currentUser', JSON.stringify(user));
+                localStorage.setItem("roles", JSON.stringify(user));
+                console.log(localStorage.getItem('roles'));
+                this.currentUserSubject.next(user);
+                return user;
+            }));
+     */
 
     logout() {
         // remove user from local storage to log user out
         localStorage.removeItem('currentUser');
         this.currentUserSubject.next(null);
     }
+
+    /*isAdmin(){
+        return this.roles.indexOf('ADMIN')>0;
+    }*/
 }

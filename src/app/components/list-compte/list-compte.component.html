@@ -15,7 +15,7 @@
             <td scope="row">{{ compte.id }}</td>
             <td><a style="cursor: pointer" (click)="onGetDepots(compte)">{{ compte.numCompte }}</a></td>
             <td>{{ compte.solde }}</td>
-            <td>{{ compte.createdAt }}</td>
+            <td>{{ compte.createdAt | date:'yyyy-MM-dd h:mm:ss a'}}</td>
             <td>{{ compte.partenaire }}</td>
         </tr>
     </tbody>

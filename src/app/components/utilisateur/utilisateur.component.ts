@@ -31,29 +31,27 @@ export class UtilisateurComponent implements OnInit {
         //console.log(data["hydra:member"]
     }  ,
         error=>{
-          alert('Veuillez vous authentifiez');
+          alert('Veuillez voir la liste des utilisateurs');
          // console.log(error);
         }
     )
   }
 
-  onActive(u){
-    
-    this.userService.getStatus(u).subscribe(
-      data=>{
-        alert(data.username+" a été modifié avec succès");
+
+      onActive(id, isActive){
+        this.userService.getStatus(id, isActive).subscribe(
+          data => {
+            alert(data.username+" a été modifié avec succès");
         this.userService.getAll().subscribe(
           data=>{
             this.users=data["hydra:member"]
-            //console.log(data["hydra:member"]
-        }  ,
-            error=>{
-              alert('Veuillez vous authentifiez');
-             // console.log(error);
-            }
-        )
-      })
-      
+          },
+          error=>{
+            alert('Veuillez voir la liste des utilisateurs');
+           // console.log(error);
+          }
+      )
+    })
       }
 
       AfficheImage(user){

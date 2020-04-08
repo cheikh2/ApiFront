@@ -18,17 +18,17 @@ import { ListTransactionComponent } from './components/list-transaction/list-tra
 const routes: Routes = [
     { path: '', component: HomeComponent, canActivate: [AuthGuard] },
     { path: 'login', component: LoginComponent },
-    { path: 'utilisateur', component: UtilisateurComponent },
-    {path:'addUser',component:AddUserComponent},
-    {path:'list-compte',component:ListCompteComponent},
-    {path:'add-compte',component:CompteComponent},
-    {path:'add-depot',component:AddDepotComponent},
-    {path:'list-depot',component:ListDepotComponent},
-    {path:'list-affectation',component:ListAffectationComponent},
-    {path:'add-affectation',component:AffectationComponent},
-    {path:'add-transaction',component:TransactionComponent},
-    {path:'list-transaction',component:ListTransactionComponent},
-    {path:'role',component:RoleComponent},
+    { path: 'utilisateur', component: UtilisateurComponent, canActivate: [AuthGuard] },
+    {path:'addUser',component:AddUserComponent, canActivate: [AuthGuard]},
+    {path:'list-compte',component:ListCompteComponent, canActivate: [AuthGuard]},
+    {path:'add-compte',component:CompteComponent, canActivate: [AuthGuard]},
+    {path:'add-depot',component:AddDepotComponent, canActivate: [AuthGuard]},
+    {path:'list-depot',component:ListDepotComponent, canActivate: [AuthGuard]},
+    {path:'list-affectation',component:ListAffectationComponent, canActivate: [AuthGuard]},
+    {path:'add-affectation',component:AffectationComponent, canActivate: [AuthGuard]},
+    {path:'add-transaction',component:TransactionComponent, canActivate: [AuthGuard]},
+    {path:'list-transaction',component:ListTransactionComponent, canActivate: [AuthGuard]},
+    {path:'role',component:RoleComponent, canActivate: [AuthGuard]},
 
     // otherwise redirect to home
     { path: '**', redirectTo: '' }

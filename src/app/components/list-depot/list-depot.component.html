@@ -13,7 +13,7 @@
         <tr *ngFor="let depot of depots">
             <td scope="row">{{ depot.id }}</td>
             <td>{{ depot.montant }}</td>
-            <td>{{ depot.dateDepot }}</td>
+            <td>{{ depot.dateDepot | date:'yyyy-MM-dd h:mm:ss a'}}</td>
             <td>{{ depot.compte.numCompte }}</td>
             <td>{{ depot.user }}</td>
         </tr>

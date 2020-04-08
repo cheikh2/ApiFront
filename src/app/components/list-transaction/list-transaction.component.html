@@ -46,8 +46,19 @@
             <td>{{ transaction.compte }}</td>
             <td>{{ transaction.compteRetrai }}</td>
             <td>{{ transaction.montantPercu }}</td>
-            <td>{{ transaction.statut }}</td>
-            <td>{{ transaction.dateTrans }}</td>
+            <td>
+                <div *ngIf="transaction.statut; else elseBlock">
+                  <span class="badge badge-success badge-pill">
+                    <i class="fa fa-thumbs-up"></i>
+                  </span>
+                </div>
+              <ng-template #elseBlock>
+                <span class="badge badge-danger badge-pill">
+                  <i class="fa fa-thumbs-up"></i>
+                </span>
+              </ng-template>
+            </td>
+            <td>{{ transaction.dateTrans | date:'yyyy-MM-dd h:mm:ss a' }}</td>
 
         </tr>
     </tbody>

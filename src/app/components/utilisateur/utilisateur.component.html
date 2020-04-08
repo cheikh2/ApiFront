@@ -22,15 +22,16 @@
     <td><img [src]="AfficheImage(user)" alt="" ></td>
     <td>
       <div *ngIf="user.isActive; else elseBlock">
-        <span class="badge badge-success badge-pill" (click)="onActive(user)">
+        <span class="badge badge-success badge-pill" (click)="onActive(user.id,user.isActive)">
           <i class="fa fa-thumbs-up"></i>
         </span>
       </div>
     <ng-template #elseBlock>
-      <span class="badge badge-danger badge-pill" (click)="onActive(user)">
+      <span class="badge badge-danger badge-pill" (click)="onActive(user.id,user.isActive)">
         <i class="fa fa-thumbs-up"></i>
       </span>
     </ng-template>
+    
   </td>
   <td>
     <button class="btn btn-warning btn-sm"><i class="fa fa-pencil"></i></button>

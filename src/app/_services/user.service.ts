@@ -25,10 +25,9 @@ export class UserService {
      
        }
 
-      getStatus(user){
-        return this.http.put<User>(`${environment.apiUrl}/api/bloqueUser/${user.id}`,user);
-     
-       }
+       getStatus(id,isActive){ 
+        return this.http.put<User>(`${environment.apiUrl}/api/bloqueUser/${id}`,{ "isActive": isActive});
+      }
 
       Image(user){
           return this.sanitizer.bypassSecurityTrustResourceUrl(`data:image/png;base64,${user.image}`)

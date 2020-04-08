@@ -13,6 +13,7 @@ export class TransactionComponent implements OnInit {
   addTrans:FormGroup;
   transaction:Transaction;
 
+  mode='envoi';
   retrait;
   id;
   code;
@@ -43,6 +44,13 @@ export class TransactionComponent implements OnInit {
       }
     )
     this.money();
+  }
+
+  onEnvoi(){
+    this.mode='envoi';
+  }
+  onRetrait(){
+    this.mode='retrait';
   }
 //###############################
     money()

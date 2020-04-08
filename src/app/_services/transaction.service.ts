@@ -11,9 +11,10 @@ export class TransactionService {
   transaction:Transaction;
   constructor(private http: HttpClient) { }
 
-  getCode(code){
-    return this.http.get<Transaction[]>(`${environment.apiUrl}/api/transactions?code=${code}`);
+  getTrans(){
+    return this.http.get<Transaction[]>(`${environment.apiUrl}/api/transactions`);
   }
+
 
   postTransfert(transaction){
     console.log(environment.apiUrl);
@@ -24,13 +25,12 @@ export class TransactionService {
     return this.http.put<Transaction>(`${environment.apiUrl}/api/transactions/${id}`,transaction);
   }*/
 
+  getCode(code){
+    return this.http.get<Transaction[]>(`${environment.apiUrl}/api/transactions?code=${code}`);
+  }
+
    putTransfert(transaction){
     return this.http.put<Transaction>(`${environment.apiUrl}/api/transactions/${transaction.id}`,transaction);
   }
   
-
-  getTrans(){
-    return this.http.get<Transaction[]>(`${environment.apiUrl}/api/transactions`);
-  }
-
 }

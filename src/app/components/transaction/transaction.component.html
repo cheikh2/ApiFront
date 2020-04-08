@@ -1,49 +1,111 @@
-<div class="col-md-9 offset-md-3 mt-5">
+<div>
+    &nbsp;&nbsp;
+    <button class="btn btn-success" (click)="onEnvoi()">FAIRE UN ENVOI</button>
+    &nbsp;
+    <button class="btn btn-primary" (click)="onRetrait()">FAIRE UN RETRAIT</button>
+</div>
+
+<p></p>
+<div *ngIf="mode=='envoi'" class="col-md-9">
     <div class="card">
-        <h4 class="card-header">Komkom</h4>
+        <h4 class="card-header">Komkom TRANSFERT</h4>
         <div class="card-body">
   
-  <form [formGroup]="addTrans">
-      
-            <div class="form-group">
-                <label for="">Code</label>
-                <input type="text" formControlName="code" value={{code}} class="form-control" id="code">
-            </div>
-            <div class="form-group">
-                <label for="">Envoyeur</label>
-                <input required minlength="3" type="text" formControlName="nomCEnvoyeur" value={{nomCEnvoyeur}} class="form-control" placeholder="Mamy" id="nomCEnvoyeur">
-            </div>
-
-            <div class="form-group">
-                <label for="">CNIEnvoyeur</label>
-                <input required type="number" formControlName="CNIEnvoyeur" value={{CNIEnvoyeur}} class="form-control" placeholder="1544199901325" id="CNIEnvoyeur">
-            </div>
-
-            <div class="form-group">
-                <label for="">telEnvoyeur</label>
-                <input required type="number" formControlName="telEnvoyeur" value={{telEnvoyeur}} class="form-control" placeholder="776666666" id="telEnvoyeur">
-            </div>
-
-            <div class="form-group">
-                <label for="">Montant</label>
-                <input required type="number" formControlName="montant" value={{montant}} class="form-control" placeholder="10000" id="montant">
-            </div>
-
-            <div class="form-group">
-                <label for="">NomCEnvoye</label>
-                <input required type="text" formControlName="nomCEnvoye" value={{nomCEnvoye}} class="form-control" placeholder="Fatou" id="nomCEnvoye">
-            </div>
-
-            <div class="form-group">
-                <label for="">TelEnvoye</label>
-                <input required type="number" formControlName="telEnvoye" value={{telEnvoye}} class="form-control" placeholder="786666666" id="telEnvoye">
-            </div>
-
-            <div class="form-group">
-                <label for="">CNIEnvoye</label>
-                <input type="number" formControlName="CNIEnvoye" class="form-control" placeholder="15441999013" id="CNIEnvoye">
-            </div>
-
-            <button class="btn btn-primary btn-block" type="submit" (click)="onSaveTransfert()">Envoyer</button>
-  </form>
+    <form [formGroup]="addTrans">
+    
+                <div class="form-group">
+                    <label for="">Code</label>
+                    <input type="text" formControlName="code" value={{code}} readonly class="form-control" id="code">
+                </div>
+                <div class="form-group">
+                    <label for="">Envoyeur</label>
+                    <input required minlength="3" type="text" formControlName="nomCEnvoyeur" value={{nomCEnvoyeur}} class="form-control" placeholder="Mamy" id="nomCEnvoyeur">
+                </div>
+    
+                <div class="form-group">
+                    <label for="">CNIEnvoyeur</label>
+                    <input required type="number" formControlName="CNIEnvoyeur" value={{CNIEnvoyeur}} class="form-control" placeholder="1544199901325" id="CNIEnvoyeur">
+                </div>
+    
+                <div class="form-group">
+                    <label for="">telEnvoyeur</label>
+                    <input required type="number" formControlName="telEnvoyeur" value={{telEnvoyeur}} class="form-control" placeholder="776666666" id="telEnvoyeur">
+                </div>
+    
+                <div class="form-group">
+                    <label for="">Montant</label>
+                    <input required type="number" formControlName="montant" value={{montant}} class="form-control" placeholder="10000" id="montant">
+                </div>
+    
+                <div class="form-group">
+                    <label for="">NomCEnvoye</label>
+                    <input required type="text" formControlName="nomCEnvoye" value={{nomCEnvoye}} class="form-control" placeholder="Fatou" id="nomCEnvoye">
+                </div>
+    
+                <div class="form-group">
+                    <label for="">TelEnvoye</label>
+                    <input required type="number" formControlName="telEnvoye" value={{telEnvoye}} class="form-control" placeholder="786666666" id="telEnvoye">
+                </div>
+    
+                <div class="form-group">
+                    <label for="">CNIEnvoye</label>
+                    <input type="number" formControlName="CNIEnvoye" class="form-control" readonly id="CNIEnvoye">
+                </div>
+    
+                <button class="btn btn-primary btn-block" type="submit" (click)="onSaveTransfert()">Envoyer</button>
+      </form>
+    </div>
   </div>
+</div>
+
+<div *ngIf="mode=='retrait'" class="col-md-9">
+    <div class="card">
+        <h4 class="card-header">Komkom TRANSFERT</h4>
+        <div class="card-body">
+  
+    <form [formGroup]="addTrans">
+    
+                <div class="form-group">
+                    <label for="">Code</label>
+                    <input type="text" formControlName="code" value={{code}} class="form-control" id="code">
+                </div>
+                <div class="form-group">
+                    <label for="">Envoyeur</label>
+                    <input required minlength="3" type="text" formControlName="nomCEnvoyeur" readonly value={{nomCEnvoyeur}} class="form-control" id="nomCEnvoyeur">
+                </div>
+    
+                <div class="form-group">
+                    <label for="">CNIEnvoyeur</label>
+                    <input required type="number" formControlName="CNIEnvoyeur" readonly value={{CNIEnvoyeur}} class="form-control" id="CNIEnvoyeur">
+                </div>
+    
+                <div class="form-group">
+                    <label for="">telEnvoyeur</label>
+                    <input required type="number" formControlName="telEnvoyeur" readonly value={{telEnvoyeur}} class="form-control" id="telEnvoyeur">
+                </div>
+    
+                <div class="form-group">
+                    <label for="">Montant</label>
+                    <input required type="number" formControlName="montant" readonly value={{montant}} class="form-control" id="montant">
+                </div>
+    
+                <div class="form-group">
+                    <label for="">NomCEnvoye</label>
+                    <input required type="text" formControlName="nomCEnvoye" readonly value={{nomCEnvoye}} class="form-control" id="nomCEnvoye">
+                </div>
+    
+                <div class="form-group">
+                    <label for="">TelEnvoye</label>
+                    <input required type="number" formControlName="telEnvoye" readonly value={{telEnvoye}} class="form-control" id="telEnvoye">
+                </div>
+    
+                <div class="form-group">
+                    <label for="">CNIEnvoye</label>
+                    <input type="number" formControlName="CNIEnvoye" class="form-control" placeholder="15441999013" id="CNIEnvoye">
+                </div>
+    
+                <button class="btn btn-primary btn-block" type="submit" (click)="onSaveTransfert()">Envoyer</button>
+      </form>
+    </div>
+  </div>
+</div>
